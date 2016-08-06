@@ -24,13 +24,15 @@ public class BlankFragment extends Fragment {
     public BlankFragment() {
         // Required empty public constructor
     }
+
     private static List<BookInfo> mbk;
     View view;
+
     public static BlankFragment newInstance(List<BookInfo> mlist) {
         Bundle args = new Bundle();
         BlankFragment fragment = new BlankFragment();
         fragment.setArguments(args);
-        mbk=mlist;
+        mbk = mlist;
         return fragment;
     }
 
@@ -38,20 +40,26 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=  inflater.inflate(R.layout.fragment_blank, container, false);
+        view = inflater.inflate(R.layout.fragment_blank, container, false);
+
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        if(mbk!=null){
-            RecyclerView myRecycler = (RecyclerView) view.findViewById(R.id.linearrecycler);
-            myRecycler.setLayoutManager(new LinearLayoutManager(this.getContext(),LinearLayoutManager.VERTICAL,false));
-            List<BookInfo> bk=new ArrayList<>();
-            for ()
-
-            MyBookAdater mbAdapter=new MyBookAdater(this.getContext(),)
+        RecyclerView myRecycler = (RecyclerView) view.findViewById(R.id.linearrecycler);
+        myRecycler.setLayoutManager(new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false));
+        List<BookInfo> bks = new ArrayList<>();
+        for (int i = 0; i <= 20; i++) {
+            BookInfo bk = new BookInfo();
+            bk.setName("test" + i);
+            bk.setOuthor("cuihangchao" + i);
+            bk.setPrice(50.00 + i);
+            bks.add(bk);
         }
+        MyBookAdater mbAdapter = new MyBookAdater(this.getContext(), bks);
+        myRecycler.setAdapter(mbAdapter);
     }
 }
+
