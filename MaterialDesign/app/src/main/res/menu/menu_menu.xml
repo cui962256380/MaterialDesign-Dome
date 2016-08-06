@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:id="@+id/group1" android:checkableBehavior="single">
+ <item android:id="@+id/itme1" android:title="我的中心">
+     <menu>
+         <item android:id="@+id/Center" android:title="个人中心" android:icon="@drawable/info"/>
+         <item android:id="@+id/money" android:title="我的钱包" android:icon="@drawable/money"/>
+     </menu>
+ </item>
+    <item android:id="@+id/itme" android:title="其他选项">
+        <menu>
+            <item android:id="@+id/setting" android:title="设置" android:icon="@drawable/setting"/>
+            <item android:id="@+id/about" android:title="关于" android:icon="@drawable/about"/>
+        </menu>
+    </item>
+</group>
+</menu>
