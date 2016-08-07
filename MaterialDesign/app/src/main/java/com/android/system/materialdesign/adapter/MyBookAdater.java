@@ -22,7 +22,7 @@ public class MyBookAdater extends BaseRecyclerAdapter<BookInfo> {
 
     @Override
     BaseViewHolder onCreateMyViewHolder(ViewGroup parent, int viewType) {
-        View v=mInflater.inflate(R.layout.fragment_blank,null,false);
+        View v=mInflater.inflate(R.layout.crad_item,null,false);
         return new BookViewHolder(v);
     }
 
